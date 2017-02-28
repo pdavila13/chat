@@ -6,6 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Message extends Model
 {
+
+    /**
+     * @var array
+     */
+    protected $fillable = [
+        'message'
+    ];
+
     /**
      * A message belong to a user
      *
