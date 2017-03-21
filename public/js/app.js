@@ -12709,7 +12709,7 @@ Vue.component('login-input-field', __webpack_require__(54));
 window.Echo = new __WEBPACK_IMPORTED_MODULE_1_laravel_echo___default.a({
   broadcaster: 'pusher',
   key: 'f5e6c2674c1d6ea1cee1',
-  cluster: 'eu',
+  cluster: 'mt1',
   encrypted: true
 });
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)))
