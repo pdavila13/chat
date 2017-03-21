@@ -6,3 +6,10 @@ var Redis = require('ioredis');
 
 // Create new Redis instance
 var redis = new Redis();
+
+io.emit('chat:missatge');
+
+// Listen web socket on port 3000
+http.listen(3000, function(){
+    console.log('Listening on Port 3000');
+});
