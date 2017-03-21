@@ -30,7 +30,7 @@ class ChatController extends Controller
     {
         $user = Auth::user();
 
-        $user->messages()->create([
+        $message = $user->messages()->create([
             'message' => $request->input('message')
         ]);
 
