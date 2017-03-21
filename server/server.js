@@ -10,7 +10,10 @@ var redis = new Redis();
 // Subscribe to all Redis Channels
 redis.psubscribe('*', function(err, count) {
     // Nothing to do here?
-    console.log('Errors subscribing to channel');
+    console.log('Subscribe to: ' + count + ' channel');
+    if (err) {
+        console.log('Errors subscribing to channel:' + err);
+    }
 });
 
 // Broadcast message when recieved from Redis on all channels
