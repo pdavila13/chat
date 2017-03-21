@@ -13,7 +13,12 @@ redis.psubscribe('*', function(err, count) {
     console.log('Errors subscribing to channel');
 });
 
-io.emit('chat:missatge');
+// Broadcast message when recieved from Redis on all channels
+redis.on('pmessage', function(subscribed,channel, message) {
+    console.log('Message Recieved at channel(' + channel + '): ' + message);
+    message = JSON.parse(message);
+    io.emit(channel + ':' + message.event, message.data);
+});
 
 // Listen web socket on port 300
 http.listen(3000, function(){
