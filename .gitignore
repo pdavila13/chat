@@ -6,3 +6,4 @@ node_modules/
 vendor/
 yarn.lock
 server/node_modules
+client/node_modules
