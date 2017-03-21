@@ -53,9 +53,19 @@ Vue.component('login-input-field', require('./components/LoginInputField.vue'));
 import Pusher from 'pusher-js'
 import Echo from "laravel-echo"
 
+// window.Echo = new Echo({
+//     broadcaster: 'pusher',
+//     key: 'f5e6c2674c1d6ea1cee1',
+//     cluster: 'mt1',
+//     encrypted: true
+// });
+
+import io from 'socket.io-client'
+window.io = io
+
 window.Echo = new Echo({
-    broadcaster: 'pusher',
-    key: 'f5e6c2674c1d6ea1cee1',
-    cluster: 'mt1',
-    encrypted: true
+    broadcaster: 'socket.io',
+    host: window.location.hostname + ':6001'
 });
+
+console.log(window.location.hostname)
