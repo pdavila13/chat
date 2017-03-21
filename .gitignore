@@ -1,0 +1,7 @@
+.env
+.idea/
+composer.lock
+database/database.sqlite
+node_modules/
+vendor/
+yarn.lock
