@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace Pdavila\Chat\Http\Controllers\Auth;
 
-use App\User;
+use Pdavila\Chat\User;
 use Validator;
-use App\Http\Controllers\Controller;
+use Pdavila\Chat\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
 /**

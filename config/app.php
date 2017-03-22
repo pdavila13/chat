@@ -182,11 +182,11 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        Pdavila\Chat\Providers\AppServiceProvider::class,
+        Pdavila\Chat\Providers\AuthServiceProvider::class,
+        // Pdavila\Chat\Providers\BroadcastServiceProvider::class,
+        Pdavila\Chat\Providers\EventServiceProvider::class,
+        Pdavila\Chat\Providers\RouteServiceProvider::class,
 
     ],
 

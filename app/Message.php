@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Pdavila\Chat;
 
 use Illuminate\Database\Eloquent\Model;
 

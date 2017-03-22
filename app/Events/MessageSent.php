@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Events;
+namespace Pdavila\Chat\Events;
 
-use App\Message;
-use App\User;
+use Pdavila\Chat\Message;
+use Pdavila\Chat\User;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Broadcasting\PrivateChannel;

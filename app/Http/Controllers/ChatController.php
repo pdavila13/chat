@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Pdavila\Chat\Http\Controllers;
 
-use App\Events\MessageSent;
-use App\Message;
+use Pdavila\Chat\Events\MessageSent;
+use Pdavila\Chat\Message;
 use Auth;
 use Illuminate\Http\Request;
 

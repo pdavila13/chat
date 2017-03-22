@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Pdavila\Chat\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
