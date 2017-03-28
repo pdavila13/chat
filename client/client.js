@@ -4,7 +4,7 @@ socket.on('connect', function(){
     console.log("Client connected OK to localhost port 3000");
 });
 
-socket.on('chat:App\\Events\\MessageSent', function(data){
+socket.on('chat:Pdavila\\Chat\\Events\\MessageSent', function(data){
     console.log("Chat received!");
     console.log(data)
 });

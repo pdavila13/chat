@@ -66,7 +66,7 @@ window.io = io
 window.Echo = new Echo({
     broadcaster: 'socket.io',
     host: window.location.hostname + ':6001',
-    namespace: 'Pdavila.Chat'
+    namespace: 'Pdavila.Chat.Events'
 });
 
 console.log(window.location.hostname)
