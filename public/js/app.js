@@ -15165,41 +15165,37 @@ Vue.component('chat-messages', __webpack_require__(100));
 Vue.component('chat-form', __webpack_require__(99));
 
 var app = new Vue({
-    el: '#app',
+  el: '#app',
+  data: {
+    messages: []
+  },
+  created: function created() {
+    var _this = this;
 
-    data: {
-        messages: []
+    this.fetchMessages();
+    Echo.channel('chat').listen('MessageSent', function (e) {
+      _this.messages.push({
+        message: e.message.message,
+        user: e.user
+      });
+    });
+  },
+
+  methods: {
+    fetchMessages: function fetchMessages() {
+      var _this2 = this;
+
+      axios.get('/messages').then(function (response) {
+        _this2.messages = response.data;
+      });
     },
-
-    created: function created() {
-        var _this = this;
-
-        this.fetchMessages();
-        Echo.channel('chat').listen('MessageSent', function (e) {
-            _this.messages.push({
-                message: e.message.message,
-                user: e.user
-            });
-        });
-    },
-
-
-    methods: {
-        fetchMessages: function fetchMessages() {
-            var _this2 = this;
-
-            axios.get('/messages').then(function (response) {
-                _this2.messages = response.data;
-            });
-        },
-        addMessage: function addMessage(message) {
-            this.messages.push(message);
-
-            axios.post('/chat', message).then(function (response) {
-                console.log(response.data);
-            });
-        }
+    addMessage: function addMessage(message) {
+      this.messages.push(message);
+      axios.post('/chat', message).then(function (response) {
+        console.log(response.data);
+      });
     }
+  }
 });
 
 /***/ }),
@@ -16354,7 +16350,8 @@ window.io = __WEBPACK_IMPORTED_MODULE_2_socket_io_client___default.a;
 
 window.Echo = new __WEBPACK_IMPORTED_MODULE_1_laravel_echo___default.a({
   broadcaster: 'socket.io',
-  host: window.location.hostname + ':6001'
+  host: window.location.hostname + ':6001',
+  namespace: 'Pdavila.Chat.Events'
 });
 
 console.log(window.location.hostname);
