@@ -16350,7 +16350,7 @@ window.io = __WEBPACK_IMPORTED_MODULE_2_socket_io_client___default.a;
 
 window.Echo = new __WEBPACK_IMPORTED_MODULE_1_laravel_echo___default.a({
   broadcaster: 'socket.io',
-  host: window.location.hostname + ':6001',
+  host: window.Laravel.echoServerURL,
   namespace: 'Pdavila.Chat.Events'
 });
 

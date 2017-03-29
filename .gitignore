@@ -3,7 +3,7 @@
 composer.lock
 database/database.sqlite
 node_modules/
-vendor/
+/vendor/
 yarn.lock
 server/node_modules
 client/node_modules
